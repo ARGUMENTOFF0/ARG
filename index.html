@@ -1,10 +1,159 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Мой сайт</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мой сайт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Onest:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #2a3cff;
+    --blue-dark: #1b27c4;
+    --paper: #f5f3ee;
+    --ink: #14152b;
+    --muted: #5b5d78;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Onest", system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  .hero {
+    background: var(--blue);
+    color: var(--paper);
+    min-height: 100svh;
+    padding: 24px 6vw 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero nav { display: flex; gap: 24px; justify-content: flex-end; font-weight: 500; }
+  .hero nav a { text-decoration: none; border-bottom: 2px solid transparent; }
+  .hero nav a:hover { border-bottom-color: var(--paper); }
+  .hero h1 {
+    font-family: "Unbounded", "Arial Black", sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.6rem, 13vw, 9rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+  }
+  .hero p { max-width: 34ch; font-size: 1.15rem; margin-top: 28px; opacity: 0.9; }
+
+  main { max-width: 860px; margin: 0 auto; padding: 0 6vw; }
+  section { padding: 80px 0 0; }
+  h2 {
+    font-family: "Unbounded", "Arial Black", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5vw, 2.1rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .about p { max-width: 62ch; margin-bottom: 16px; color: var(--muted); }
+  .about p:first-of-type { color: var(--ink); font-size: 1.2rem; }
+
+  .projects a {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 24px;
+    padding: 22px 0;
+    border-top: 2px solid var(--ink);
+    text-decoration: none;
+    transition: background 0.15s, padding 0.15s;
+  }
+  .projects a:last-child { border-bottom: 2px solid var(--ink); }
+  .projects a:hover { background: var(--blue); color: var(--paper); padding-left: 14px; padding-right: 14px; }
+  .projects strong { font-family: "Unbounded", sans-serif; font-weight: 600; font-size: 1.15rem; }
+  .projects span { color: var(--muted); grid-column: 1; }
+  .projects a:hover span { color: var(--paper); }
+  .projects em { grid-row: 1 / 3; grid-column: 2; align-self: center; font-style: normal; font-weight: 500; }
+
+  .contacts ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+  .contacts a {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.15s;
+  }
+  .contacts a:hover { background: var(--blue); }
+
+  footer { padding: 80px 6vw 40px; text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
 </head>
 <body>
-  <h1>Привет, мир!</h1>
+
+<header class="hero">
+  <nav>
+    <a href="#about">Обо мне</a>
+    <a href="#projects">Проекты</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <div>
+    <!-- Замените текст на своё имя или ник -->
+    <h1>Привет, я ARGument</h1>
+    <!-- Одна фраза о том, чем вы занимаетесь -->
+    <p>Учусь, делаю проекты и выкладываю их сюда.</p>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="about">
+    <h2>Обо мне</h2>
+    <!-- Напишите пару предложений о себе -->
+    <p>Я студент. Увлекаюсь программированием и творчеством.</p>
+    <p>Этот сайт — моя страница в интернете. Здесь собраны мои работы и способы связаться со мной.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Проекты которые у меня ещё нет но в скором времени возможно появятся</h2>
+    <!-- Копируйте блок <a>...</a> для каждого проекта, меняйте href и тексты -->
+    <a href="https://github.com/">
+      <strong>Первый проект</strong>
+      <span>Короткое описание: что это и зачем.</span>
+      <em>Открыть</em>
+    </a>
+    <a href="https://github.com/">
+      <strong>Второй проект</strong>
+      <span>Короткое описание: что это и зачем.</span>
+      <em>Открыть</em>
+    </a>
+    <a href="https://github.com/">
+      <strong>Третий проект</strong>
+      <span>Короткое описание: что это и зачем.</span>
+      <em>Открыть</em>
+    </a>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <h2>Контакты</h2>
+    <ul>
+      <!-- Замените ссылки на свои -->
+      <li><a href="https://github.com/ARGUMENTOFF0">GitHub</a></li>
+      <li><a href="https://t.me/">Telegram</a></li>
+      <li><a href="mailto:you@example.com">Почта</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>© 2026</footer>
+
 </body>
 </html>
